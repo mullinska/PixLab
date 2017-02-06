@@ -109,5 +109,11 @@ public class IntArrayWorker {
 		return largest;
 	}
 	
-	
+	public int getColTotal(int id) {
+		int total = 0;
+		for (int row = 0; row < matrix.length; row++) {
+			total += matrix[row][id];
+		}
+		return total;
+	}
 }
