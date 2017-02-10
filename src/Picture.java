@@ -230,8 +230,10 @@ public class Picture extends SimplePicture {
 				leftPixel = pixels[row][col];
 				rightPixel = pixels[row][mirrorPoint - col + mirrorPoint];
 				rightPixel.setColor(leftPixel.getColor());
+				count++;
 			}
 		}
+		System.out.println(count);
 	}
 
 	/**
@@ -309,6 +311,7 @@ public class Picture extends SimplePicture {
 		beach.explore();
 		beach.zeroBlue();
 		beach.explore();
+		beach.mirrorTemple();
 	}
 
 } // this } is the end of class Picture, put all new methods before this
