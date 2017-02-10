@@ -259,7 +259,22 @@ public class Picture extends SimplePicture {
 				pixels[192 - 169 + 192 - row + 169][col].setColor(topPixel.getColor());
 			}
 		}
-	}	
+	}
+	
+	public void mirrorGull() {
+		Pixel topPixel = null;
+		Pixel[][] pixels = this.getPixels2D();
+
+		// loop through the rows
+		for (int row = 234; row < 332; row++) {
+			// loop from 13 to just before the mirror point
+			for (int col = 237; col < 343; col++) {
+				topPixel = pixels[row][col];
+				pixels[row][343 - 237 + 343 - col].setColor(topPixel.getColor());
+			}
+		}
+		
+	}
 	
 	/**
 	 * copy from the passed fromPic to the specified startRow and startCol in
@@ -334,9 +349,11 @@ public class Picture extends SimplePicture {
 	public static void main(String[] args) {
 		Picture beach = new Picture("beach.jpg");
 		Picture snow = new Picture("snowman.jpg");
-		snow.explore();
-		snow.mirrorArms();
-		snow.explore();
+		Picture gull = new Picture("seagull.jpg");
+		gull.explore();
+		gull.mirrorGull();
+		gull.explore();
+		
 	}
 
 } // this } is the end of class Picture, put all new methods before this
