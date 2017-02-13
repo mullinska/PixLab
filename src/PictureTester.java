@@ -93,7 +93,14 @@ public class PictureTester
   public static void testCollage()
   {
     Picture canvas = new Picture("640x480.jpg");
-    canvas.createCollage();
+    Picture swan = new Picture("swan.jpg");
+    Picture arch = new Picture("arch.jpg");
+    Picture beach = new Picture("beach.jpg");
+    
+    canvas.copy2(swan, 200, 200, 300, 300);
+    canvas.copy2(arch, 100, 200, 200, 100);
+    canvas.copy2(beach, 300, 200, 400, 300);
+    
     canvas.explore();
   }
   
@@ -131,13 +138,13 @@ public class PictureTester
 //	  testMirrorVerticalRightToLeft();
 //	  testMirrorHorizontal();
 //	  testMirrorHorizontalBotToTop();
-	  testMirrorDiagonal();
+//	  testMirrorDiagonal();
     //testMirrorTemple();
     //testMirrorArms();
     //testMirrorGull();
     //testMirrorDiagonal();
-    //testCollage();
-    testCopy();
+    testCollage();
+//    testCopy();
     //testEdgeDetection();
     //testEdgeDetection2();
     //testChromakey();
