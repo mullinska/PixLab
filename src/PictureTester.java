@@ -100,6 +100,7 @@ public class PictureTester
     canvas.copy2(swan, 200, 200, 300, 300);
     canvas.copy2(arch, 100, 200, 200, 100);
     canvas.copy2(beach, 300, 200, 400, 300);
+    canvas.mirrorDiagonal();
     
     canvas.explore();
   }
